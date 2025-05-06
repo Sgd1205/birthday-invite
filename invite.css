@@ -1,0 +1,258 @@
+/* Reset and Base Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: #E6F7F8;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    height: auto;
+  }
+  
+  .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
+    padding: 1rem;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23FFDDC1" fill-opacity="0.6" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,133.3C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path><path fill="%238DD3C7" fill-opacity="0.5" d="M0,224L48,202.7C96,181,192,139,288,138.7C384,139,480,181,576,202.7C672,224,768,224,864,197.3C960,171,1056,117,1152,106.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+}
+  
+  /* Invitation Content */
+  .invitation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem; /* adds space between items */
+    padding-top: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  /* Add Flower Decorations Around the Text */
+  .invitation-content::before,
+  .invitation-content::after {
+    content: '🌼';
+    position: absolute;
+    font-size: 1.5rem; 
+    color: #4682B4;
+  }
+  
+  .invitation-content::before {
+    top: -40px;
+    left: -20px;
+  }
+  
+  .invitation-content::after {
+    bottom: -40px;
+    right: -20px;
+  }
+  
+  /* Greeting Styling ("Hey Gourge!") */
+  #greeting {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #FF7E5F;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Subheader ("PLEASE JOIN TO CELEBRATE") */
+  .invite-subheader {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0077B6;  /* Blue */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0.5rem 0;
+  }
+  
+  /* Event Title ("Samira’s BIRTHDAY PARTY") */
+  .event-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: #FF7F50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+  }
+  
+  /* Invite Text */
+  .invite {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4rem;
+    color: #2E4A4E; 
+    line-height: 2rem;
+    margin: 1rem ;
+  }
+
+  .invite a {
+    color: #008080; /* Teal */
+    text-decoration: underline;
+  }
+
+  #countdown {
+    color: #0077B6;
+  }
+  
+  /* RSVP Button Styling ("RSVP Now!") */
+  .rsvp-btn {
+    background: linear-gradient(135deg, #8DD3C7, #56CCF2);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .rsvp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(242, 140, 56, 0.3);
+    background: linear-gradient(135deg, #56CCF2, #8DD3C7);
+  }
+  
+  /* Toggle Container */
+  .toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  /* Hide the Checkbox */
+  #musicToggle {
+    display: none;
+  }
+  
+  /* Toggle Label (The Switch) */
+  .toggle-label {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: #ccc; /* Default off state */
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  /* The Sliding Circle */
+  .toggle-label::after {
+    content: '';
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* When Checkbox is Checked (Music On) */
+  #musicToggle:checked + .toggle-label {
+    background: linear-gradient(135deg, #8DD3C7, #56CCF2); 
+ }
+  
+  #musicToggle:checked + .toggle-label::after {
+    transform: translateX(25px);
+    background: white;
+  }
+  
+  /* When Checkbox is Unchecked (Music Off) */
+  #musicToggle:not(:checked) + .toggle-label {
+    background: #e0e0e0;
+  }
+  
+  #musicToggle:not(:checked) + .toggle-label::after {
+    transform: translateX(0);
+  }
+  
+  /* Hover Effect */
+  .toggle-label:hover {
+    opacity: 0.9;
+  }
+  
+  /* Petal Animation - CSS-Based Flower Shape */
+  .petals {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 0; /* behind content */
+  }
+
+  .petal {
+    will-change: transform;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+    }
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .invitation-content {
+      padding: 1rem;
+    }
+    #greeting {
+      font-size: 2rem;
+    }
+    .event-title {
+      font-size: 1.8rem;
+    }
+    .invite-subheader,
+    .invite {
+      font-size: 1rem;
+    }
+    .rsvp-btn {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+    }
+    .toggle-container {
+      top: 15px;
+      right: 15px;
+    }
+    .toggle-label {
+      width: 40px;
+      height: 20px;
+    }
+    .toggle-label::after {
+      width: 16px;
+      height: 16px;
+      top: 2px;
+      left: 2px;
+    }
+    #musicToggle:checked + .toggle-label::after {
+      transform: translateX(20px);
+    }
+  }
+
+

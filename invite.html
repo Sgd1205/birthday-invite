@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Invite</title>
+  <link rel="stylesheet" href="invite.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="page page-invite">
+  <audio id="backgroundMusic" loop>
+    <source src="assets/background.mp3" type="audio/mpeg">
+  </audio>
+  <div class="petals"></div>
+  <div class="toggle-container">
+    <input type="checkbox" id="musicToggle">
+    <label for="musicToggle" class="toggle-label"></label>
+  </div>
+
+  <!-- Invitation Text Directly on the Page -->
+  <div class="invitation-content">
+    <h1 id="greeting">Hey! 🌼</h1>
+    <p class="invite-subheader">You’re invited to</p>
+    <h2 class="event-title">Sharon's <br> 21st birthday celebration!</h2>
+    <p class="invite">
+      Monday, May 12th 2025 6.30pm<br/>
+      Address: <a href="">Domino's</a><br/>
+      Can’t wait to see you on my special day!<br/>
+      Theme : Beach vibes
+    </p>
+    <p class="countdown-text"><strong id="countdown"></strong></p>
+    <a href="https://forms.gle/NmwacniQVqm66jHEA" target="_blank" class="rsvp-btn">
+      🎟️ Book your seat now (hehe)
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="petals.js"></script>
+</body>
+</html>

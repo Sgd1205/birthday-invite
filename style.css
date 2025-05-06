@@ -1,0 +1,281 @@
+/* Reset and Base Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  /* Enhanced gradient with a subtle pastel texture */
+  background: linear-gradient(135deg, #fffaf4 0%, #f0faff 50%, #ffeaf2 100%);
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(135deg, #fffaf4 0%, #f0faff 50%, #ffeaf2 100%);
+  animation: gradientShift 15s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Page Layout */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  /* Add a subtle background pattern (optional, you can add an image if desired) */
+  background: url('assets/subtle-pattern.png') repeat, linear-gradient(135deg, #fffaf4, #f0faff);
+  background-size: 200px, 100%;
+}
+
+/* Card Styling */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 2.5rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(255, 182, 185, 0.2);
+  max-width: 450px;
+  width: 90%;
+  animation: fadeIn 1.2s ease-in-out;
+  /* Add a subtle border for a magical touch */
+  border: 1px solid rgba(255, 182, 185, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a decorative element to the card */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255, 111, 97, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+/* Title Styling */
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #ff6f61;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.5rem;
+}
+
+/* Greeting on invite.html */
+#greeting {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #ff6f61;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Subtitle and Invite Text */
+.subtitle, .invite {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+/* Input Styling */
+input {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  width: 85%;
+  border: 2px solid #ffd1d3;
+  border-radius: 1.2rem;
+  outline: none;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.2);
+}
+
+/* Button Styling */
+button, .rsvp-btn {
+  background: linear-gradient(135deg, #ffb6b9, #ff8c94);
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+button:hover, .rsvp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 111, 97, 0.3);
+  background: linear-gradient(135deg, #ff8c94, #ffb6b9);
+}
+
+/* RSVP Button Specific Styling */
+.rsvp-btn {
+  background: linear-gradient(135deg, #88e1f2, #66c7e0);
+  color: #333;
+}
+
+.rsvp-btn:hover {
+  background: linear-gradient(135deg, #66c7e0, #88e1f2);
+  color: #222;
+}
+
+/* Countdown Text */
+#countdown {
+  font-weight: 600;
+  color: #ff6f61;
+  margin-top: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Petal Animation */
+/* .petal {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-image: url('assets/flower-bg.svg');
+  background-size: cover;
+  animation: float 12s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0% { transform: translateY(-20vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; } */
+/* } */
+
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ffb6b9, #ff8c94);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: white;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 111, 97, 0.3);
+}
+
+/* Toggle Container */
+.toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Hide the Checkbox */
+#musicToggle {
+  display: none;
+}
+
+/* Toggle Label (The Switch) */
+.toggle-label {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background: #ccc; /* Default off state */
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* The Sliding Circle */
+.toggle-label::after {
+  content: '';
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* When Checkbox is Checked (Music On) */
+#musicToggle:checked + .toggle-label {
+  background: linear-gradient(135deg, #ffb6b9, #ff8c94); /* Matches your button gradient */
+}
+
+#musicToggle:checked + .toggle-label::after {
+  transform: translateX(25px); /* Slide the circle to the right */
+  background: white;
+}
+
+/* When Checkbox is Unchecked (Music Off) */
+#musicToggle:not(:checked) + .toggle-label {
+  background: #e0e0e0; /* Light gray for off state */
+}
+
+#musicToggle:not(:checked) + .toggle-label::after {
+  transform: translateX(0); /* Circle stays on the left */
+}
+
+/* Hover Effect */
+.toggle-label:hover {
+  opacity: 0.9;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+  .title, #greeting {
+    font-size: 2rem;
+  }
+  .subtitle, .invite {
+    font-size: 1rem;
+  }
+  button, .rsvp-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+  .toggle-container {
+    top: 15px;
+    right: 15px;
+  }
+  .toggle-label {
+    width: 40px;
+    height: 20px;
+  }
+  .toggle-label::after {
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+  }
+  #musicToggle:checked + .toggle-label::after {
+    transform: translateX(20px);
+  }
+}

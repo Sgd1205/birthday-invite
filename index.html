@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're Invited!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="page page-summer">
+  <audio autoplay loop>
+    <source src="assets/background.mp3" type="audio/mpeg">
+  </audio>
+  <div class="petals"></div>
+  <div class="toggle-container">
+    <input type="checkbox" id="musicToggle" checked>
+    <label for="musicToggle" class="toggle-label"></label>
+  </div>
+  <div class="card">
+    <h1 class="title">Hey there! 🌸</h1>
+    <p class="subtitle">What's your name?</p>
+    <input type="text" id="nameInput" placeholder="Type your name..." />
+    <button onclick="saveName()">Next</button>
+  </div>
+  <script src="script.js"></script>
+  <script src="petals.js"></script>
+</body>
+</html>
